@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.collapse {
+  visibility: unset;
+}
+.medal-style:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 80px;
+  width: 37px;
+  height: 98px;
+  background: url("../public/icon-award-left.png") 0 0 no-repeat;
+}
+.medal-style:after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 80px;
+  width: 37px;
+  height: 98px;
+  background: url("../public/icon-award-right.png") 0 0 no-repeat;
+}
+.awards-container {
+  display: flex;
+  justify-content: space-between; /* Căn đều các item */
+  align-items: flex-start; /* Căn tất cả các item về đầu */
+  gap: 20px; /* Khoảng cách giữa các item */
+}
+
+.award-item {
+  text-align: center; /* Căn giữa nội dung */
+  max-width: 300px; /* Đảm bảo các item có cùng chiều rộng */
+  flex: 1; /* Để tất cả các item có kích thước đồng đều */
+}
+
+.award-icon {
+  font-size: 40px; /* Biểu tượng lớn */
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.award-year {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.award-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.award-subtitle {
+  font-size: 14px;
+  color: #666; /* Màu chữ phụ */
+}
+
+.image-city {
+  background: url("../public/background-about-rf.webp") 50% 50% no-repeat;
+  /* height: 70vh; */
+  /* background-size: auto 100%; */
+  position: relative;
+}
+
+/* Embla home */
+.embla1 {
+  max-width: 100%;
+  margin: auto;
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 80%;
+}
+.embla1__viewport {
+  overflow: hidden;
+}
+.embla1__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla1__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+.embla1__slide__img {
+  border-radius: 1.8rem;
+  display: block;
+  /* height: var(--slide-height); */
+  width: 100%;
+  object-fit: cover;
+}
+.embla1__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+.embla1__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+.embla1__button {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  width: 3.6rem;
+  height: 3.6rem;
+  z-index: 1;
+  border-radius: 50%;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.embla1__button:disabled {
+  color: var(--detail-high-contrast);
+}
+.embla1__button__svg {
+  width: 35%;
+  height: 35%;
+}
+.embla1__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+}
+.embla1__dot {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.embla1__dot:after {
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  content: "";
+}
+.embla1__dot--selected:after {
+  box-shadow: inset 0 0 0 0.2rem var(--text-body);
+}
+.embla1__parallax {
+  border-radius: 1.8rem;
+  height: 100%;
+  overflow: hidden;
+}
+.embla1__parallax__layer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.embla1__parallax__img {
+  max-width: none;
+  flex: 0 0 calc(115% + (var(--slide-spacing) * 2));
+  object-fit: cover;
+}
+
+.label11:after {
+  content: "+";
+  position: absolute;
+  right: 1em;
+  color: #fff;
+}
+
+.input11:checked + .label11:after {
+  content: "-";
+  line-height: 0.8em;
+}
+
+.accordion__content {
+  max-height: 0em;
+  transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+}
+input[name="panel"]:checked ~ .accordion__content {
+  /* Get this as close to what height you expect */
+  max-height: 50em;
+}

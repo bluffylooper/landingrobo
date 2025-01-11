@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../public/font/sfpro/SF-Pro-Text-Regular.otf") format("opentype"),
+    url("../public/font/sfpro/SF-Pro-Text-RegularItalic.otf") format("opentype"),
+    url("../public/font/sfpro/SF-Pro-Text-Bold.otf") format("opentype");
+}
+
+.fontios {
+  line-height: 1.38462;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  color: #1d1d1f;
+  line-height: 1.38462;
+  font-weight: 400;
+  font-family: "SF Pro Text";
+}
