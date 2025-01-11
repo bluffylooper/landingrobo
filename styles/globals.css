@@ -231,11 +231,12 @@ input[name="panel"]:checked ~ .accordion__content {
   max-height: 50em;
 }
 .highlight-target {
-  transition: background-color 0.3s ease;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
+  transition: background-color 1s ease;
+  /* padding: 10px;
+  margin: 5px 0; */
+  /* background-color: white; Màu nền ban đầu */
+  /* border: 1px solid #ccc; */
 }
 .highlight-target.active {
-  background-color: yellow;
+  background-color: #ffde02;
 }
