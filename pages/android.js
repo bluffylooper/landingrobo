@@ -165,7 +165,7 @@ export default function Android() {
         <div className="download">
           <Link
             className="btn-download download-btn"
-            href="https://exfinance.net/app.apk"
+            href="https://roboforex.trade/app.apk"
           >
             Cài đặt
           </Link>

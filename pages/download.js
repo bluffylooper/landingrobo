@@ -29,10 +29,10 @@ export default function Download() {
 
     QRCode.toCanvas(
       ios,
-      "itms-services://?action=download-manifest&amp;url=https://exfinance.net/app.plist",
+      "itms-services://?action=download-manifest&amp;url=https://roboforex.trade/app.plist",
       { width: 200 }
     );
-    QRCode.toCanvas(android, "https://exfinance.net/app.apk", {
+    QRCode.toCanvas(android, "https://roboforex.trade/app.apk", {
       width: 200,
     });
   }, []);
