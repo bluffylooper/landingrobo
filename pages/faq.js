@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { faqList } from "@/lib/content";
 import { useRouter } from "next/router";
-const AccordionItem = ({ title, content, isOpen, onClick, id }) => {
+const AccordionItem = ({ title, content, isOpen, onClick, id, selected }) => {
   return (
     <div
-      className={`highlight-target px-2 py-2 ${
-        id % 2 !== 0 ? "bg-white rounded" : ""
-      }`}
+      className={`highlight-target px-2 py-2 
+        ${id % 2 !== 0 ? "bg-white rounded" : ""} 
+        ${selected == `#${id}` ? "activee " : ""}
+      `}
       id={`id-${id}`}
     >
       <h2>
@@ -66,20 +67,9 @@ const AccordionItem = ({ title, content, isOpen, onClick, id }) => {
 };
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [selected, setSelected] = useState(null);
   const router = useRouter();
-  console.log("🚀 ~ Faq ~ router:", router);
-  function extractHashValue(url) {
-    // Tìm vị trí của dấu '#'
-    const hashIndex = url.indexOf("#");
 
-    // Nếu không tìm thấy dấu '#', trả về null hoặc một giá trị mặc định khác
-    if (hashIndex === -1) {
-      return null; // Hoặc bạn có thể trả về một chuỗi rỗng: ''
-    }
-
-    // Lấy phần sau dấu '#' và trả về
-    return `#${url.substring(hashIndex + 1)}`;
-  }
   const highlightElementByHash = () => {
     if (typeof window === "undefined") return;
     const hash = window.location.hash; // Lấy hash từ URL (vd: #5)
@@ -94,11 +84,13 @@ export default function Faq() {
       const target = document.querySelector(hash.replace("#", "#id-"));
       if (target) {
         target.classList.add("active");
+        setSelected(hash);
 
         // Cuộn đến phần tử trong viewport
         target.scrollIntoView({ behavior: "smooth", block: "center" });
         setTimeout(() => {
           target.classList.remove("active");
+          setSelected(null);
         }, 1000); // 2000ms = 2 giây
       }
     }
@@ -134,6 +126,7 @@ export default function Faq() {
                 content={item?.content}
                 isOpen={openIndex === index}
                 onClick={() => toggleAccordion(index)}
+                selected={selected}
               />
             ))}
           </div>

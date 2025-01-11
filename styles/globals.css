@@ -237,6 +237,6 @@ input[name="panel"]:checked ~ .accordion__content {
   /* background-color: white; Màu nền ban đầu */
   /* border: 1px solid #ccc; */
 }
-.highlight-target.active {
-  background-color: #ffde02;
+.highlight-target.activee {
+  background-color: #ffde02 !important;
 }
