@@ -406,7 +406,7 @@ export default function Home({ coins }) {
                   desc: "International Business Magazine Awards",
                 },
               ].map((item, key) => (
-                <div class="award-item">
+                <div class="award-item" key={key}>
                   <div class="award-icon justify-center ">
                     {/* <div className="medal-style"> */}
                     <Image src={awardLeft} width={37} height={98} />

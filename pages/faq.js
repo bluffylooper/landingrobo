@@ -1,5 +1,5 @@
-import { faqList } from "@/lib/content";
 import React, { useState } from "react";
+import { faqList } from "@/lib/content";
 const AccordionItem = ({ title, content, isOpen, onClick }) => {
   return (
     <div className="py-2">
@@ -58,7 +58,7 @@ const AccordionItem = ({ title, content, isOpen, onClick }) => {
     </div>
   );
 };
-export default function faq() {
+export default function Faq() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleAccordion = (index) => {
