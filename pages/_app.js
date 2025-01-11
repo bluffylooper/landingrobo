@@ -114,10 +114,10 @@ function MyApp({ Component, pageProps, mainMenu }) {
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <title>Exness</title>
+        <title>RoboForex</title>
         <meta name="description" content="XTrading" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" type="image/x-icon" href="/logo.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="/logo-mini.png" />
       </Head>
 
       {isLoading && <Preloader></Preloader>}
