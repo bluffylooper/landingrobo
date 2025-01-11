@@ -118,7 +118,7 @@ export default function Android() {
         <div className="app-inf">
           <div className="left">
             <div className="logo">
-              <img src="/logo-mini.png" alt="logo" />
+              <img src="/adaptive-icon.png" alt="logo" />
             </div>
           </div>
           <div className="if">
@@ -174,9 +174,9 @@ export default function Android() {
       <div className="slider-intro">
         <div className="embla" ref={emblaRef}>
           <div className="embla__container_android">
-            {Array.from(Array(8).keys()).map((item) => (
+            {Array.from(Array(6).keys()).map((item) => (
               <div key={item} className="embla__slide_android item">
-                <img src={`/unnamed-${item}.webp`} alt="photo" width={300} />
+                <img src={`/slot${item + 1}.png`} alt="photo" width={300} />
               </div>
             ))}
 

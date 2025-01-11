@@ -133,7 +133,7 @@ export default function Ios() {
         </div>
         <section className="product">
           <div className="product-logo">
-            <img src="/logo-mini.png" alt="photo" />
+            <img src="/adaptive-icon.png" alt="photo" />
           </div>
           <div className="product-control">
             <div className="head">
@@ -242,9 +242,9 @@ export default function Ios() {
           <h2>Xem trước</h2>
           <div className="embla" ref={emblaRef}>
             <div className="embla__container">
-              {Array.from(Array(8).keys()).map((item) => (
+              {Array.from(Array(6).keys()).map((item) => (
                 <div className="embla__slide" key={item}>
-                  <img src={`/unnamed-${item}.webp`} alt="photo" width={300} />
+                  <img src={`/slot${item + 1}.png`} alt="photo" width={300} />
                 </div>
               ))}
 
