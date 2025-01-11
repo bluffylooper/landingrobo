@@ -1,4 +1,4 @@
-import contents from "@/lib/content";
+import { contents } from "@/lib/content";
 import { useRouter } from "next/router";
 import React from "react";
 

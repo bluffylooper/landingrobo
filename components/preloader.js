@@ -1,6 +1,6 @@
 export default function Preloader() {
   //   return (
-  //     <div class="spinner">
+  //     <div className="spinner">
   //       <div></div>
   //       <div></div>
   //       <div></div>
@@ -12,7 +12,7 @@ export default function Preloader() {
   // <div className="preloader">
   //   <div className="loader">
   //     <div className="spinner">
-  //       <div class="spinnercube">
+  //       <div className="spinnercube">
   //         <div></div>
   //         <div></div>
   //         <div></div>
@@ -27,7 +27,7 @@ export default function Preloader() {
   return (
     <div className="preloader">
       <div className="loader">
-        <div class="loaderan"></div>
+        <div className="loaderan"></div>
       </div>
     </div>
   );

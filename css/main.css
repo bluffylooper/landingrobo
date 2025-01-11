@@ -286,7 +286,7 @@ p {
   align-items: center;
   font-size: 18px;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 99px;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -4445,7 +4445,7 @@ p {
 .loaderan {
   display: block;
   --height-of-loader: 4px;
-  --loader-color: #1378bf;
+  --loader-color: #ffde02;
   width: 130px;
   height: var(--height-of-loader);
   border-radius: 30px;

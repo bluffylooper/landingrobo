@@ -23,13 +23,13 @@ export default function TitleListItem({
               key={index}
               href="#"
               // target="_blank"
-              class="vc-link w-inline-block"
+              className="vc-link w-inline-block"
             >
               <img
                 src={post.image}
                 loading="lazy"
                 alt="Được góp vốn bởi Nextrans"
-                class="fund-logo"
+                className="fund-logo"
                 style={{
                   border: "1px solid rgba(0, 0, 255, .15)",
                   borderRadius: "12px",

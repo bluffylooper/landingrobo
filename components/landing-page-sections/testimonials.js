@@ -21,8 +21,8 @@ export default function Testimonials({
         navPosition: "bottom",
         controls: true,
         controlsText: [
-          '<i class="lni lni-chevron-left"></i>',
-          '<i class="lni lni-chevron-right"></i>',
+          '<i className="lni lni-chevron-left"></i>',
+          '<i className="lni lni-chevron-right"></i>',
         ],
         items: 1,
       });

@@ -206,9 +206,11 @@ export default function Home({ coins }) {
               <br /> Hãy thử mua chỉ với $50 qua một thao tác nhấn, đồng thời
               nâng tầm kỹ năng
             </p>
-            <button className="bg-[#ffde02] text-white px-6 py-3 rounded text-lg font-bold">
-              Bắt đầu giao dịch ngay
-            </button>
+            <Link href={"/download"}>
+              <button className="bg-[#ffde02] text-white px-6 py-3 rounded text-lg font-bold">
+                Bắt đầu giao dịch ngay
+              </button>
+            </Link>
             <p className="text-sm">*Vốn của bạn đang gặp rủi ro</p>
           </div>
 
@@ -273,7 +275,7 @@ export default function Home({ coins }) {
           </div>
         </div>
       </section>
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-4" id="about">
         <h3>Lợi thế giao dịch của bạn với RoboForex</h3>
         <p className=" text-gray-500 mt-2 pb-6">
           Không có giới hạn nào cho công ty môi giới RoboForex khi cung cấp
@@ -406,8 +408,8 @@ export default function Home({ coins }) {
                   desc: "International Business Magazine Awards",
                 },
               ].map((item, key) => (
-                <div class="award-item" key={key}>
-                  <div class="award-icon justify-center ">
+                <div className="award-item" key={key}>
+                  <div className="award-icon justify-center ">
                     {/* <div className="medal-style"> */}
                     <Image src={awardLeft} width={37} height={98} />
                     <Image
@@ -420,9 +422,9 @@ export default function Home({ coins }) {
                     <Image src={awardRight} width={37} height={98} />
                     {/* </div> */}
                   </div>
-                  <div class="award-year">{item.year}</div>
-                  <div class="award-title">{item.title}</div>
-                  <div class="award-subtitle">{item.desc}</div>
+                  <div className="award-year">{item.year}</div>
+                  <div className="award-title">{item.title}</div>
+                  <div className="award-subtitle">{item.desc}</div>
                 </div>
               ))}
 
@@ -882,10 +884,11 @@ export default function Home({ coins }) {
               dịch vụ độc quyền của chúng tôi và thảo luận về các giải pháp phù
               hợp sẽ phù hợp với bạn.
             </p>
-
-            <button className="bg-[#ffde02] text-white px-6 py-3 rounded text-lg font-bold">
-              Bắt đầu giao dịch ngay
-            </button>
+            <Link href={"/download"}>
+              <button className="bg-[#ffde02] text-white px-6 py-3 rounded text-lg font-bold">
+                Bắt đầu giao dịch ngay
+              </button>
+            </Link>
           </div>
           <div className="w-full md:w-1/2">
             <Image src={User} alt="Desktop" />

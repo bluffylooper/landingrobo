@@ -24,9 +24,9 @@ export default function ScrollToButtonButton() {
 
   return (
     <>
-      <button type="button" className="messenger " onClick={showChat}>
+      {/* <button type="button" className="messenger " onClick={showChat}>
         <i className="lni lni-wechat"></i>
-      </button>
+      </button> */}
       {hasScrollToTopButton && (
         <Link href="#" className="scroll-top btn-hover">
           <i className="lni lni-chevron-up"></i>

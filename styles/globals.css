@@ -230,3 +230,12 @@ input[name="panel"]:checked ~ .accordion__content {
   /* Get this as close to what height you expect */
   max-height: 50em;
 }
+.highlight-target {
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+}
+.highlight-target.active {
+  background-color: yellow;
+}

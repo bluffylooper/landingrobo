@@ -93,9 +93,9 @@ function MyApp({ Component, pageProps, mainMenu }) {
   const maindMenu = [
     { label: "Trang chủ", url: "/" },
     { label: "Về chúng tôi", url: "/#about" },
-    { label: "Tính năng", url: "/#features" },
+    // { label: "Tính năng", url: "/#features" },
     { label: "Tải app", url: "/download" },
-    { label: "Chính sách", url: "/policy" },
+    { label: "Chính sách", url: "/article/policy" },
   ];
 
   const hideHeadderFooter = ["/android", "/ios"].includes(router.pathname);
