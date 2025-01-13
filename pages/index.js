@@ -6,6 +6,11 @@ import User from "../public/xxxl_exness_b2b_cta_b66fbc29ea.jpg";
 
 import Map from "../public/exness_b2b_home_desktop_fde496265e.jpg";
 import City from "../public/background-about-rf.webp";
+import User1 from "../public/user-1.png";
+import User2 from "../public/user-2.png";
+import User3 from "../public/user-3.png";
+import User4 from "../public/user-4.png";
+import User5 from "../public/user-5.png";
 import SVG1 from "../public/image.svg";
 import SVG2 from "../public/image-2.svg";
 import SVG3 from "../public/image-3.svg";
@@ -32,6 +37,7 @@ import {
 } from "@/components/EmbraCarouselButton";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import Autoplay from "embla-carousel-autoplay";
 
 const TWEEN_FACTOR_BASE = 0.2;
 
@@ -172,8 +178,66 @@ const EmblaCarousel = (props) => {
     </div>
   );
 };
+
+const EmblaCarouselAdvise = (props) => {
+  const { slides, options } = props;
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Autoplay({ playOnInit: true, delay: 3000 }),
+  ]);
+
+  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+    useDotButton(emblaApi);
+
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
+  useEffect(() => {
+    emblaApi?.plugins()?.autoplay;
+  }, [emblaApi]);
+
+  return (
+    <section className="embla2" dir="rtl">
+      <div className="embla2__viewport" ref={emblaRef}>
+        <div className="embla2__container">
+          {slides.map((item, key) => (
+            <div className="embla2__slide" key={key}>
+              <div className="embla2__slide__number">
+                <Image src={item.img} alt="user" width={150} height={150} />
+                <p className=" text-left text-[#edf0f299] mt-2  w-1/2  ">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="embla2__controls">
+        <div className="embla2__buttons">
+          {/* <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} /> */}
+        </div>
+
+        <div className="embla2__dots">
+          {/* {scrollSnaps.map((_, index) => (
+            <DotButton
+              key={index}
+              onClick={() => onDotButtonClick(index)}
+              className={"embla2__dot".concat(
+                index === selectedIndex ? " embla2__dot--selected" : ""
+              )}
+            />
+          ))} */}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function Home({ coins }) {
-  console.log("🚀 ~ Home ~ coins:", coins);
   useEffect(() => {
     const download = document.getElementById("download-canvas");
 
@@ -381,31 +445,31 @@ export default function Home({ coins }) {
         <section className="bg-gray-100 text-center py-12">
           <div className="container mx-auto">
             <h1 className="text-2xl md:text-4xl font-semibold text-gray-800">
-              Winner of more than 10 prestigious awards
+              Người chiến thắng hơn 10 giải thưởng danh giá
             </h1>
             <p className="text-gray-600 mt-4">
-              Financial brokerage RoboForex is recognised by the most respected
-              experts of the financial industry.
+              Công ty môi giới tài chính RoboForex được công nhận bởi các chuyên
+              gia được kính trọng nhất trong ngành tài chính.
             </p>
             <div className="flex flex-col md:flex-row justify-between items-center md:items-start mt-12 space-y-8 md:space-y-0 md:space-x-12">
               {[
                 {
                   icon: MEDAL1,
                   year: 2024,
-                  title: "Best Introducing Broker Programme - LatAm",
-                  desc: "GF Awards - Retail",
+                  title: "Chương trình môi giới giới thiệu tốt nhất - LatAm",
+                  desc: "Giải thưởng GF - Bán lẻ",
                 },
                 {
                   icon: MEDAL1,
                   year: 2023,
-                  title: "Best Mobile Trading App",
-                  desc: "GF Awards - B2B",
+                  title: "Ứng dụng giao dịch di động tốt nhất",
+                  desc: "Giải thưởng GF - B2B",
                 },
                 {
                   icon: MEDAL2,
                   year: 2022,
-                  title: "Most Trusted Broker",
-                  desc: "International Business Magazine Awards",
+                  title: "Nhà môi giới đáng tin cậy nhất",
+                  desc: "Giải thưởng Tạp chí Kinh doanh Quốc tế",
                 },
               ].map((item, key) => (
                 <div className="award-item" key={key}>
@@ -873,28 +937,55 @@ export default function Home({ coins }) {
           </div>
         </div>
       </section> */}
-      <section className="">
-        <div className="flex flex-col-reverse md:flex-row justify-between items-center bg-[#070e20] ">
-          <div className="  w-full md:w-1/2 px-20 my-10">
-            <h3 className="text-white pb-4 ">
-              Nói chuyện với các chuyên gia của chúng tôi
-            </h3>
-            <p className=" text-[#edf0f299]  pb-20  ">
-              Liên hệ với các chuyên gia B2B của chúng tôi để tìm hiểu thêm về
-              dịch vụ độc quyền của chúng tôi và thảo luận về các giải pháp phù
-              hợp sẽ phù hợp với bạn.
-            </p>
-            <Link href={"/download"}>
-              <button className="bg-[#ffde02] text-white px-6 py-3 rounded text-lg font-bold">
-                Bắt đầu giao dịch ngay
-              </button>
-            </Link>
+      <InView>
+        <section className=" bg-[#070e20]">
+          <div className="container  flex flex-col-reverse md:flex-row justify-between items-center  ">
+            <div className="  w-full md:w-1/2  my-10 ">
+              <h3 className="text-white pb-4 ">
+                Nói chuyện với các chuyên gia của chúng tôi
+              </h3>
+              <p className=" text-[#edf0f299]  pb-20  ">
+                Liên hệ với các chuyên gia B2B của chúng tôi để tìm hiểu thêm về
+                dịch vụ độc quyền của chúng tôi và thảo luận về các giải pháp
+                phù hợp sẽ phù hợp với bạn.
+              </p>
+              <Link href={"/download"}>
+                <button className="bg-[#ffde02] text-white px-6 py-3 rounded text-lg font-bold">
+                  Bắt đầu giao dịch ngay
+                </button>
+              </Link>
+            </div>
+            <div className="w-full md:w-1/2">
+              <EmblaCarouselAdvise
+                slides={[
+                  {
+                    img: User2,
+                    desc: "Hiểu rõ các khái niệm cơ bản như spread, đòn bẩy, và LOT là bước đầu tiên để giao dịch hiệu quả.",
+                  },
+                  {
+                    img: User1,
+                    desc: "Thành công trên thị trường ngoại hối đòi hỏi kiên nhẫn, kỷ luật và khả năng học hỏi liên tục.",
+                  },
+                  {
+                    img: User3,
+                    desc: "Tránh giao dịch theo cảm xúc, hãy tuân thủ chiến lược đã định sẵn để đạt hiệu quả.",
+                  },
+                  {
+                    img: User4,
+                    desc: "Luôn quản lý rủi ro bằng cách đặt lệnh dừng lỗ, không đầu tư số tiền bạn không thể mất.",
+                  },
+                  {
+                    img: User5,
+                    desc: "Đa dạng hóa danh mục đầu tư, không đặt tất cả vốn vào một cặp tiền duy nhất.",
+                  },
+                ]}
+                options={{ loop: true, direction: "rtl" }}
+              />
+              {/* <Image src={User} alt="Desktop" /> */}
+            </div>
           </div>
-          <div className="w-full md:w-1/2">
-            <Image src={User} alt="Desktop" />
-          </div>
-        </div>
-      </section>
+        </section>
+      </InView>
     </main>
   );
 }
