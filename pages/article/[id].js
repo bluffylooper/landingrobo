@@ -12,7 +12,7 @@ export default function Id() {
         }}
       ></div>
       {[
-        "tern-of-service",
+        "client-agreement",
         "partner-agreement",
         "terms-of-personal-data-processing",
         "general-risk-disclosure",

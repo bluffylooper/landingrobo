@@ -30,22 +30,34 @@ export default function FooterSection({ mainMenu }) {
     },
   ];
   const agrement = [
+    // {
+    //   label: "Tuyên bố miễn trừ",
+    //   url: "/article/disclaimer",
+    // },
     {
-      label: "Tuyên bố miễn trừ",
-      url: "/article/disclaimer",
+      label: "Thoả thuận khách hàng",
+      url: "/article/client-agreement",
     },
     {
-      label: "Điều khoản dịch vụ",
-      url: "/article/tern-of-service",
+      label: "Thỏa thuận đối tác",
+      url: "/article/partner-agreement",
+    },
+    // {
+    //   label: "Điều khoản bảo mật",
+    //   url: "/article/policy",
+    // },
+    {
+      label: "Rủi ro và miễn trách nhiệm",
+      url: "/article/general-risk-disclosure",
     },
     {
-      label: "Điều khoản bảo mật",
-      url: "/article/policy",
+      label: "Điều khoản xử lý dữ liệu cá nhân",
+      url: "/article/terms-of-personal-data-processing",
     },
-    {
-      label: "Thỏa thuận hợp đồng",
-      url: "/article/contract-agreement",
-    },
+    // {
+    //   label: "Thỏa thuận hợp đồng",
+    //   url: "/article/contract-agreement",
+    // },
   ];
   const support = [
     {
@@ -73,7 +85,7 @@ export default function FooterSection({ mainMenu }) {
               <p className="text-sm ">
                 RoboForex luôn cố gắng hết sức cung cấp dịch vụ tiện lợi, an
                 toàn và đáng tin cậy nhất, với mục tiêu trở thành nền tảng được
-                lựa chọn hàng đầu của nhà đầu tư tài sản mã hóa
+                lựa chọn hàng đầu của nhà đầu tư tài sản ngoại hối
               </p>
               <div className="flex space-x-4 mt-4">
                 <i className="fab fa-telegram fa-lg"></i>

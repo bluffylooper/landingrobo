@@ -199,15 +199,15 @@ const EmblaCarouselAdvise = (props) => {
   }, [emblaApi]);
 
   return (
-    <section className="embla2" dir="rtl">
+    <section className="embla2">
       <div className="embla2__viewport" ref={emblaRef}>
         <div className="embla2__container">
           {slides.map((item, key) => (
             <div className="embla2__slide" key={key}>
               <div className="embla2__slide__number">
                 <Image src={item.img} alt="user" width={150} height={150} />
-                <p className=" text-left text-[#edf0f299] mt-2  w-1/2  ">
-                  {item.desc}
+                <p className=" text-left text-[#edf0f299] mt-2  md:w-1/2  ">
+                  "{item.desc}"
                 </p>
               </div>
             </div>
@@ -960,26 +960,26 @@ export default function Home({ coins }) {
                 slides={[
                   {
                     img: User2,
-                    desc: "Hiểu rõ các khái niệm cơ bản như spread, đòn bẩy, và LOT là bước đầu tiên để giao dịch hiệu quả.",
+                    desc: "Hiểu rõ các khái niệm cơ bản như spread, đòn bẩy, và LOT là bước đầu tiên để giao dịch hiệu quả",
                   },
                   {
                     img: User1,
-                    desc: "Thành công trên thị trường ngoại hối đòi hỏi kiên nhẫn, kỷ luật và khả năng học hỏi liên tục.",
+                    desc: "Thành công trên thị trường ngoại hối đòi hỏi kiên nhẫn, kỷ luật và khả năng học hỏi liên tục",
                   },
                   {
                     img: User3,
-                    desc: "Tránh giao dịch theo cảm xúc, hãy tuân thủ chiến lược đã định sẵn để đạt hiệu quả.",
+                    desc: "Tránh giao dịch theo cảm xúc, hãy tuân thủ chiến lược đã định sẵn để đạt hiệu quả",
                   },
                   {
                     img: User4,
-                    desc: "Luôn quản lý rủi ro bằng cách đặt lệnh dừng lỗ, không đầu tư số tiền bạn không thể mất.",
+                    desc: "Luôn quản lý rủi ro bằng cách đặt lệnh dừng lỗ, không đầu tư số tiền bạn không thể mất",
                   },
                   {
                     img: User5,
-                    desc: "Đa dạng hóa danh mục đầu tư, không đặt tất cả vốn vào một cặp tiền duy nhất.",
+                    desc: "Đa dạng hóa danh mục đầu tư, không đặt tất cả vốn vào một cặp tiền duy nhất",
                   },
                 ]}
-                options={{ loop: true, direction: "rtl" }}
+                options={{ loop: true }}
               />
               {/* <Image src={User} alt="Desktop" /> */}
             </div>
