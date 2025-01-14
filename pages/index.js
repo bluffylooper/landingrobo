@@ -207,7 +207,7 @@ const EmblaCarouselAdvise = (props) => {
               <div className="embla2__slide__number">
                 <Image src={item.img} alt="user" width={150} height={150} />
                 <p className=" text-left text-[#edf0f299] mt-2  md:w-1/2  ">
-                  "{item.desc}"
+                  {`"${item.desc}"`}
                 </p>
               </div>
             </div>
