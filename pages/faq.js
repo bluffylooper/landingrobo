@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { faqList } from "@/lib/content";
 import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 const AccordionItem = ({ title, content, isOpen, onClick, id, selected }) => {
   return (
     <div
@@ -134,4 +135,20 @@ export default function Faq() {
       </div>
     </div>
   );
+}
+export async function getStaticProps({ locale }) {
+  try {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["common"])),
+      },
+      revalidate: 10,
+    };
+  } catch (e) {
+    console.log("Could not get posts", e);
+
+    return {
+      props: {},
+    };
+  }
 }

@@ -10,7 +10,8 @@ import FooterSection from "@/components/footer-section";
 import HeaderSection from "@/components/header-section";
 import ScrollToButtonButton from "@/components/scroll-to-top-button";
 import Preloader from "@/components/preloader";
-
+import { appWithTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next";
 import "bootstrap/dist/css/bootstrap.css";
 // import "bootstrap/js/src/collapse.js";
 import "@/css/lineicons.css";
@@ -20,6 +21,7 @@ import "@/css/main.css";
 
 function MyApp({ Component, pageProps, mainMenu }) {
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useTranslation("common");
   const router = useRouter();
   console.log("🚀 ~ MyApp ~ router:", router.pathname);
 
@@ -91,13 +93,12 @@ function MyApp({ Component, pageProps, mainMenu }) {
   };
 
   const maindMenu = [
-    { label: "Trang chủ", url: "/" },
-    { label: "Về chúng tôi", url: "/#about" },
+    { label: t("home"), url: "/" },
+    { label: t("about"), url: "/#about" },
     // { label: "Tính năng", url: "/#features" },
-    { label: "Tải app", url: "/download" },
-    { label: "Chính sách", url: "/article/policy" },
+    { label: t("download"), url: "/download" },
+    { label: t("policy"), url: "/article/partner-agreement" },
   ];
-
   const hideHeadderFooter = ["/android", "/ios"].includes(router.pathname);
 
   const pageLayout = (
@@ -135,4 +136,4 @@ MyApp.getInitialProps = async (appContext) => {
   return { ...appProps };
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);

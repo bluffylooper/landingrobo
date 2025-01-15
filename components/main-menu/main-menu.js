@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 
 import MainMenuLink from "./main-menu-link";
+import LocaleSwitch from "../locale-switch";
 
 export default function ManiMenu({ mainMenuLinks }) {
   const [activeMenuLink, setActiveMenuLink] = useState(
@@ -109,6 +110,9 @@ export default function ManiMenu({ mainMenuLinks }) {
                   callbackOnClick={inactivateMenu}
                 />
               ))}
+              <li>
+                <LocaleSwitch />
+              </li>
             </ul>
           </div>
         </div>
@@ -125,6 +129,9 @@ export default function ManiMenu({ mainMenuLinks }) {
                   callbackOnClick={inactivateMenu}
                 />
               ))}
+              <li>
+                <LocaleSwitch />
+              </li>
             </ul>
           </div>
         </div>

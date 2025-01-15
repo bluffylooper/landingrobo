@@ -38,7 +38,8 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import Autoplay from "embla-carousel-autoplay";
-
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 const TWEEN_FACTOR_BASE = 0.2;
 
 const geistSans = localFont({
@@ -245,7 +246,7 @@ export default function Home({ coins }) {
       width: 250,
     });
   }, []);
-
+  const { t } = useTranslation("common");
   return (
     <main>
       <section className=" text-white ">
@@ -256,7 +257,9 @@ export default function Home({ coins }) {
             options={{ dragFree: true, loop: true }}
           /> */}
           <div className="absolute inset-0 left-16 top-[-14rem] md:-top-20 md:left-36 flex flex-col items-start justify-center text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold">Giao dịch hơn</h1>
+            <h1 className="text-5xl md:text-6xl font-bold">
+              {t("transaction")}
+            </h1>
 
             <div className="text-5xl md:text-6xl font-bold">
               <NumberAnimation
@@ -266,16 +269,15 @@ export default function Home({ coins }) {
               />{" "}
             </div>
             <p className="text-lg text-left text-white hidden md:block">
-              Bạn còn mới với thị trường ngoại hối? Không sao.
-              <br /> Hãy thử mua chỉ với $50 qua một thao tác nhấn, đồng thời
-              nâng tầm kỹ năng
+              {t("new_guy")}
+              <br /> {t("try_50")}
             </p>
             <Link href={"/download"}>
               <button className="bg-[#ffde02] text-white px-6 py-3 rounded text-lg font-bold">
-                Bắt đầu giao dịch ngay
+                {t("start_buy")}
               </button>
             </Link>
-            <p className="text-sm">*Vốn của bạn đang gặp rủi ro</p>
+            <p className="text-sm">*{t("asset_risk")}</p>
           </div>
 
           <div className="absolute  bottom-0 w-full grid grid-cols-2 gap-4 md:grid-cols-5 justify-around bg-white py-4">
@@ -287,7 +289,7 @@ export default function Home({ coins }) {
                   targetNumber={25462603}
                 />
               </div>
-              <p className="text-sm text-black ">Khối lượng giao dịch 24h</p>
+              <p className="text-sm text-black ">{t("calc_24h")}</p>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-black">
@@ -297,9 +299,7 @@ export default function Home({ coins }) {
                   targetNumber={2726841}
                 />
               </div>
-              <p className="text-sm text-black">
-                Người dùng hoạt động tích cực trên nền tảng
-              </p>
+              <p className="text-sm text-black">{t("user_activate")}</p>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-black">
@@ -310,7 +310,7 @@ export default function Home({ coins }) {
                   rightContent={`&nbsp;triệu`}
                 />
               </div>
-              <p className="text-sm text-black">Lượng tiền gửi vào nền tảng</p>
+              <p className="text-sm text-black">{t("money_platform")}</p>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-black">
@@ -318,12 +318,10 @@ export default function Home({ coins }) {
                   startNumber={100}
                   targetNumber={5}
                   className={"flex flex-row justify-center "}
-                  rightContent={`&nbsp;phút`}
+                  rightContent={`&nbsp;${t("minute")}`}
                 />
               </div>
-              <p className="text-sm text-black">
-                Thời gian rút tiền trung bình
-              </p>
+              <p className="text-sm text-black">{t("day_withdraw")}</p>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-black">
@@ -331,20 +329,17 @@ export default function Home({ coins }) {
                   startNumber={100}
                   className={"flex flex-row justify-center "}
                   targetNumber={7}
-                  rightContent={`&nbsp;ngày`}
+                  rightContent={`&nbsp;${t("day")}`}
                 />
               </div>
-              <p className="text-sm text-black">Hỗ trợ riêng biệt</p>
+              <p className="text-sm text-black">{t("separate_support")}</p>
             </div>
           </div>
         </div>
       </section>
       <div className="container mx-auto px-4 py-4" id="about">
-        <h3>Lợi thế giao dịch của bạn với RoboForex</h3>
-        <p className=" text-gray-500 mt-2 pb-6">
-          Không có giới hạn nào cho công ty môi giới RoboForex khi cung cấp
-          những lợi ích vượt trội cho khách hàng.
-        </p>
+        <h3>{t("advantage")}</h3>
+        <p className=" text-gray-500 mt-2 pb-6">{t("desc_advantage")}</p>
         <ul
           style={{
             listStyleType: "none",
@@ -358,19 +353,17 @@ export default function Home({ coins }) {
         >
           {[
             {
-              title:
-                "Thanh toán cho các đối tác: <br/> Lên đến 85% mức chênh lệch trung bình <br/> +20% từ hoán đổi",
+              title: t("advantage1"),
               icon: SVG1,
             },
-            { title: "8 loại tài sản", icon: SVG2 },
+            { title: t("advantage2"), icon: SVG2 },
             {
-              title:
-                "Tài khoản vi mô với <br/> Kích thước lô tối thiểu là 0,01",
+              title: t("advantage3"),
               icon: SVG3,
             },
-            { title: "Hệ thống giao dịch sao chép tiên tiến", icon: SVG4 },
-            { title: "Thực hiện lệnh nhanh nhất", icon: SVG5 },
-            { title: "Chênh lệch chặt chẽ từ 0 pips", icon: SVG6 },
+            { title: t("advantage4"), icon: SVG4 },
+            { title: t("advantage5"), icon: SVG5 },
+            { title: t("advantage6"), icon: SVG6 },
           ].map((item, key) => (
             <li
               key={key}
@@ -393,7 +386,6 @@ export default function Home({ coins }) {
                     verticalAlign: "middle",
                     width: "25%",
                     height: "100%",
-                    minHeight: "8rem",
                     fontSize: "1rem",
                     backgroundPosition: "50% 50%",
                     backgroundRepeat: "no-repeat",
@@ -415,15 +407,12 @@ export default function Home({ coins }) {
           <div className="container mx-auto px-4 text-center flex flex-col md:flex-row justify-center items-center">
             <div className="w-full md:w-[70%]">
               <h1 className=" text-3xl md:text-4xl font-bold mb-4">
-                Vận hành an toàn nhiều năm, không có sự cố an ninh và bảo mật!
+                {t("activate_year")}
               </h1>
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Nền tảng đáng tin cậy dành cho bạn
+                {t("trust_platform")}
               </h2>
-              <p className="text-lg md:text-xl">
-                An toàn là ưu tiên hàng đầu, chúng tôi không ngừng nỗ lực để bảo
-                vệ tài sản và thông tin của bạn.
-              </p>
+              <p className="text-lg md:text-xl">{t("safe_first")}</p>
             </div>
             <div className="w-full md:w-[30%]  justify-center">
               <Image
@@ -445,37 +434,34 @@ export default function Home({ coins }) {
         <section className="bg-gray-100 text-center py-12">
           <div className="container mx-auto">
             <h1 className="text-2xl md:text-4xl font-semibold text-gray-800">
-              Người chiến thắng hơn 10 giải thưởng danh giá
+              {t("10_prize")}
             </h1>
-            <p className="text-gray-600 mt-4">
-              Công ty môi giới tài chính RoboForex được công nhận bởi các chuyên
-              gia được kính trọng nhất trong ngành tài chính.
-            </p>
+            <p className="text-gray-600 mt-4">{t("company_finance")}</p>
             <div className="flex flex-col md:flex-row justify-between items-center md:items-start mt-12 space-y-8 md:space-y-0 md:space-x-12">
               {[
                 {
                   icon: MEDAL1,
                   year: 2024,
-                  title: "Chương trình môi giới giới thiệu tốt nhất - LatAm",
-                  desc: "Giải thưởng GF - Bán lẻ",
+                  title: t("prize_title1"),
+                  desc: t("prize_desc1"),
                 },
                 {
                   icon: MEDAL1,
                   year: 2023,
-                  title: "Ứng dụng giao dịch di động tốt nhất",
-                  desc: "Giải thưởng GF - B2B",
+                  title: t("prize_title2"),
+                  desc: t("prize_desc2"),
                 },
                 {
                   icon: MEDAL2,
                   year: 2022,
-                  title: "Nhà môi giới đáng tin cậy nhất",
-                  desc: "Giải thưởng Tạp chí Kinh doanh Quốc tế",
+                  title: t("prize_title3"),
+                  desc: t("prize_desc3"),
                 },
               ].map((item, key) => (
                 <div className="award-item" key={key}>
                   <div className="award-icon justify-center ">
                     {/* <div className="medal-style"> */}
-                    <Image src={awardLeft} width={37} height={98} />
+                    <Image alt="Award" src={awardLeft} width={37} height={98} />
                     <Image
                       alt="Award icon for Best Introducing Broker Programme - LatAm"
                       // className=" mx-auto"
@@ -483,7 +469,12 @@ export default function Home({ coins }) {
                       src={item.icon}
                       width="50"
                     />
-                    <Image src={awardRight} width={37} height={98} />
+                    <Image
+                      alt="Award"
+                      src={awardRight}
+                      width={37}
+                      height={98}
+                    />
                     {/* </div> */}
                   </div>
                   <div className="award-year">{item.year}</div>
@@ -547,17 +538,17 @@ export default function Home({ coins }) {
       <InView>
         <div className="bg-white text-gray-900 mx-10">
           <div className="container mx-auto p-4">
-            <h1 className="text-3xl font-bold mb-4">Các loại tiền phổ biến</h1>
+            <h1 className="text-3xl font-bold mb-4">{t("coin_popular")}</h1>
             <div className=" overflow-x-auto">
               <table className="w-full text-left ">
                 <thead>
                   <tr className="text-gray-500">
-                    <th className="py-2">Tên</th>
-                    <th className="py-2">Giá thấp nhất</th>
-                    <th className="py-2">Giá cao nhất</th>
+                    <th className="py-2">{t("name")}</th>
+                    <th className="py-2">{t("low_price")}</th>
+                    <th className="py-2">{t("high_price")}</th>
                     {/* <th className="py-2">Thay đổi</th> */}
-                    <th className="py-2">Giá trị 24h</th>
-                    <th className="py-2">Xu thế tình hình thị trường</th>
+                    <th className="py-2">{t("value_24h")}</th>
+                    <th className="py-2">{t("popular_market")}</th>
                     {/* <th className="py-2">Hành động</th> */}
                   </tr>
                 </thead>
@@ -819,9 +810,7 @@ export default function Home({ coins }) {
       <InView>
         <section className="bg-white flex items-center justify-center ">
           <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">
-              Loại tiền được đánh dấu sao có độ sâu giao dịch hàng đầu toàn cầu.
-            </h1>
+            <h1 className="text-4xl font-bold mb-4">{t("coin_mark")}</h1>
             <div className="w-10/12 m-auto mt-10">
               <Image src={Chart} alt="Chart" />
             </div>
@@ -837,12 +826,9 @@ export default function Home({ coins }) {
               <div className="flex flex-col  mb-8 md:mb-0 md:mr-8 basis-1/2">
                 <div className="text-center">
                   <h1 className="text-4xl font-bold mb-4">
-                    Giao dịch mọi lúc mọi nơi
+                    {t("transaction_everywhere")}
                   </h1>
-                  <p className="text-lg text-gray-500 mb-8">
-                    Bất luận là app hay web, đều có thể mở giao dịch của bạn
-                    nhanh chóng
-                  </p>
+                  <p className="text-lg text-gray-500 mb-8">{t("anyway")}</p>
                 </div>
                 <div className="flex flex-row self-center">
                   <canvas id="download-canvas"></canvas>
@@ -854,7 +840,7 @@ export default function Home({ coins }) {
                   width="150"
                 /> */}
                   <div className="pl-5 content-center ">
-                    <p className="text-lg mb-2">Quét mã tải xuống</p>
+                    <p className="text-lg mb-2">{t("scan_download")}</p>
                     <p className="text-2xl font-bold">iOS &amp; Android</p>
                   </div>
                 </div>
@@ -941,17 +927,13 @@ export default function Home({ coins }) {
         <section className=" bg-[#070e20]">
           <div className="container  flex flex-col-reverse md:flex-row justify-between items-center  ">
             <div className="  w-full md:w-1/2  my-10 ">
-              <h3 className="text-white pb-4 ">
-                Nói chuyện với các chuyên gia của chúng tôi
-              </h3>
+              <h3 className="text-white pb-4 ">{t("talk_expert")}</h3>
               <p className=" text-[#edf0f299]  pb-20  ">
-                Liên hệ với các chuyên gia B2B của chúng tôi để tìm hiểu thêm về
-                dịch vụ độc quyền của chúng tôi và thảo luận về các giải pháp
-                phù hợp sẽ phù hợp với bạn.
+                {t("contact_expert")}
               </p>
               <Link href={"/download"}>
                 <button className="bg-[#ffde02] text-white px-6 py-3 rounded text-lg font-bold">
-                  Bắt đầu giao dịch ngay
+                  {t("start_buy")}
                 </button>
               </Link>
             </div>
@@ -960,23 +942,23 @@ export default function Home({ coins }) {
                 slides={[
                   {
                     img: User2,
-                    desc: "Hiểu rõ các khái niệm cơ bản như spread, đòn bẩy, và LOT là bước đầu tiên để giao dịch hiệu quả",
+                    desc: t("expert1"),
                   },
                   {
                     img: User1,
-                    desc: "Thành công trên thị trường ngoại hối đòi hỏi kiên nhẫn, kỷ luật và khả năng học hỏi liên tục",
+                    desc: t("expert2"),
                   },
                   {
                     img: User3,
-                    desc: "Tránh giao dịch theo cảm xúc, hãy tuân thủ chiến lược đã định sẵn để đạt hiệu quả",
+                    desc: t("expert3"),
                   },
                   {
                     img: User4,
-                    desc: "Luôn quản lý rủi ro bằng cách đặt lệnh dừng lỗ, không đầu tư số tiền bạn không thể mất",
+                    desc: t("expert4"),
                   },
                   {
                     img: User5,
-                    desc: "Đa dạng hóa danh mục đầu tư, không đặt tất cả vốn vào một cặp tiền duy nhất",
+                    desc: t("expert5"),
                   },
                 ]}
                 options={{ loop: true }}
@@ -990,7 +972,7 @@ export default function Home({ coins }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   try {
     if (process.env.API_URL) {
       // const res = await fetch(process.env.API_URL + "api/blog?limit=5");
@@ -1000,7 +982,13 @@ export async function getStaticProps() {
       // const { data } = await res.json();
       const { data: dataCoin } = await resCoin.json();
 
-      return { props: { coins: dataCoin }, revalidate: 10 };
+      return {
+        props: {
+          ...(await serverSideTranslations(locale, ["common"])),
+          coins: dataCoin,
+        },
+        revalidate: 10,
+      };
     } else throw new Error("Error");
   } catch (e) {
     console.log("Could not get posts", e);

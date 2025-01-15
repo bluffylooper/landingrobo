@@ -2,9 +2,11 @@ import Image from "next/image";
 import ScrollToButtonButton from "./scroll-to-top-button";
 import Link from "next/link";
 
+import { useTranslation } from "next-i18next";
 import logo from "../public/logo-mini.png";
 // import logo from "../public/logoFooter.png";
 export default function FooterSection({ mainMenu }) {
+  const { t } = useTranslation("common");
   const links = mainMenu.map((link) => ({
     ...link,
   }));
@@ -13,19 +15,19 @@ export default function FooterSection({ mainMenu }) {
   };
   const legal = [
     {
-      label: "Tuyên bố pháp lý",
+      label: t("legal_statement"),
       url: "/article/legal-statement",
     },
     {
-      label: "Báo cáo chính trực",
+      label: t("integrity_violation"),
       url: "/article/integrity-violation",
     },
     {
-      label: "Chống rửa tiền",
+      label: t("money_laundering"),
       url: "/article/money-laundering",
     },
     {
-      label: "Hướng dẫn thực thi pháp lý",
+      label: t("law_enforcement"),
       url: "/article/law-enforcement",
     },
   ];
@@ -35,11 +37,11 @@ export default function FooterSection({ mainMenu }) {
     //   url: "/article/disclaimer",
     // },
     {
-      label: "Thoả thuận khách hàng",
+      label: t("client_agreement"),
       url: "/article/client-agreement",
     },
     {
-      label: "Thỏa thuận đối tác",
+      label: t("partner_agreement"),
       url: "/article/partner-agreement",
     },
     // {
@@ -47,11 +49,11 @@ export default function FooterSection({ mainMenu }) {
     //   url: "/article/policy",
     // },
     {
-      label: "Rủi ro và miễn trách nhiệm",
+      label: t("general_risk_disclosure"),
       url: "/article/general-risk-disclosure",
     },
     {
-      label: "Điều khoản xử lý dữ liệu cá nhân",
+      label: t("terms_of_personal_data_processing"),
       url: "/article/terms-of-personal-data-processing",
     },
     // {
@@ -79,14 +81,8 @@ export default function FooterSection({ mainMenu }) {
                 width="100"
               /> */}
               <Image src={logo} alt="Logo" width={45} height={45} />
-              <p className="text-lg font-semibold mb-2 ">
-                Dịch vụ giao dịch tiền kỹ thuật số chuyên nghiệp
-              </p>
-              <p className="text-sm ">
-                RoboForex luôn cố gắng hết sức cung cấp dịch vụ tiện lợi, an
-                toàn và đáng tin cậy nhất, với mục tiêu trở thành nền tảng được
-                lựa chọn hàng đầu của nhà đầu tư tài sản ngoại hối
-              </p>
+              <p className="text-lg font-semibold mb-2 ">{t("footer_title")}</p>
+              <p className="text-sm ">{t("footer_desc")}</p>
               <div className="flex space-x-4 mt-4">
                 <i className="fab fa-telegram fa-lg"></i>
                 <i className="fab fa-xing fa-lg"></i>
@@ -99,7 +95,7 @@ export default function FooterSection({ mainMenu }) {
             </div>
             <div className="flex flex-wrap justify-between w-full md:w-auto">
               <div className="w-1/2 md:w-auto mb-8 md:mb-0 md:mr-8">
-                <h3 className="font-semibold mb-4 ">Thông tin</h3>
+                <h3 className="font-semibold mb-4 ">{t("information")}</h3>
                 <ul>
                   {mainMenu?.map((item) => (
                     <li className="mb-2" key={item?.label}>
@@ -112,7 +108,7 @@ export default function FooterSection({ mainMenu }) {
               </div>
 
               <div className="w-1/2 md:w-auto mb-8 md:mb-0 md:mr-8">
-                <h3 className="font-semibold mb-4 ">Pháp lý</h3>
+                <h3 className="font-semibold mb-4 ">{t("legal")}</h3>
                 <ul>
                   {legal?.map((item) => (
                     <li className="mb-2" key={item?.label}>
@@ -124,7 +120,7 @@ export default function FooterSection({ mainMenu }) {
                 </ul>
               </div>
               <div className="w-1/2 md:w-auto mb-8 md:mb-0 md:mr-8">
-                <h3 className="font-semibold mb-4 ">Thoả thuận</h3>
+                <h3 className="font-semibold mb-4 ">{t("agreement")}</h3>
                 <ul>
                   {agrement?.map((item) => (
                     <li className="mb-2" key={item?.label}>
@@ -136,7 +132,7 @@ export default function FooterSection({ mainMenu }) {
                 </ul>
               </div>
               <div className="w-1/2 md:w-auto mb-8 md:mb-0 md:mr-8">
-                <h3 className="font-semibold mb-4 ">Hỗ trợ</h3>
+                <h3 className="font-semibold mb-4 ">{t("support")}</h3>
                 <ul>
                   {support?.map((item) => (
                     <li className="mb-2" key={item?.label}>

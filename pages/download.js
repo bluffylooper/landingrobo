@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import QRCode from "qrcode";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Download() {
   const router = useRouter();
@@ -115,4 +116,20 @@ export default function Download() {
       </div>
     </section>
   );
+}
+export async function getStaticProps({ locale }) {
+  try {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["common"])),
+      },
+      revalidate: 10,
+    };
+  } catch (e) {
+    console.log("Could not get posts", e);
+
+    return {
+      props: {},
+    };
+  }
 }

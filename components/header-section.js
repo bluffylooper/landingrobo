@@ -50,7 +50,7 @@ export default function HeaderSection({ mainMenu }) {
                       height: "auto",
                     }}
                   />
-                  {/* <h3>Exness</h3> */}
+                  {/* <h3>oboforex</h3> */}
                 </Link>
                 <MainMenu mainMenuLinks={mainMenu} />
               </nav>
