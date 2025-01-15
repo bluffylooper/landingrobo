@@ -14,7 +14,7 @@ export default function Id() {
     <div className=" mt-24 container">
       <div
         dangerouslySetInnerHTML={{
-          __html: contents[router.query.id],
+          __html: contents[`${router.query.id}-${router.locale}`],
         }}
       ></div>
       {[

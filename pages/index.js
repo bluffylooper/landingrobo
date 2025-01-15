@@ -257,11 +257,11 @@ export default function Home({ coins }) {
             options={{ dragFree: true, loop: true }}
           /> */}
           <div className="absolute inset-0 left-16 top-[-14rem] md:-top-20 md:left-36 flex flex-col items-start justify-center text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-4xl md:text-5xl font-bold">
               {t("transaction")}
             </h1>
 
-            <div className="text-5xl md:text-6xl font-bold">
+            <div className="text-4xl md:text-5xl font-bold">
               <NumberAnimation
                 targetNumber={2250}
                 rightContent={`&nbsp;CFDs`}
@@ -307,7 +307,7 @@ export default function Home({ coins }) {
                   startNumber={2000}
                   targetNumber={154}
                   className={"flex flex-row justify-center "}
-                  rightContent={`&nbsp;triệu`}
+                  rightContent={`&nbsp;${t("milion")}`}
                 />
               </div>
               <p className="text-sm text-black">{t("money_platform")}</p>

@@ -2,6 +2,7 @@ import React from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
+import { useTranslation } from "next-i18next";
 // Cấu hình worker của react-pdf
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
@@ -20,9 +21,10 @@ export default function PdfViewer({ file }) {
   const goToNextPage = () => {
     if (pageNumber < numPages) setPageNumber(pageNumber + 1);
   };
+  const { t } = useTranslation("common");
   return (
     <div
-      className=" w-full m-auto justify-items-center"
+      className=" w-full m-auto flex flex-col justify-center items-center justify-items-center"
       style={{ textAlign: "center", marginTop: "20px" }}
     >
       <Document
@@ -38,17 +40,17 @@ export default function PdfViewer({ file }) {
           onClick={goToPrevPage}
           disabled={pageNumber <= 1}
         >
-          Trang trước
+          {t("page")} {t("before")}
         </button>
         <span style={{ margin: "0 10px" }}>
-          Trang {pageNumber} / {numPages}
+          {t("page")} {pageNumber} / {numPages}
         </span>
         <button
           className=" border px-2 rounded"
           onClick={goToNextPage}
           disabled={pageNumber >= numPages}
         >
-          Trang sau
+          {t("page")} {t("after")}
         </button>
       </div>
     </div>

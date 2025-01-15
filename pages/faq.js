@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { faqList } from "@/lib/content";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 const AccordionItem = ({ title, content, isOpen, onClick, id, selected }) => {
   return (
     <div
@@ -112,6 +113,7 @@ export default function Faq() {
       window.removeEventListener("hashchange", highlightElementByHash);
     };
   }, []);
+  const { t } = useTranslation("common");
   return (
     <div className="relative font-inter antialiased">
       <div className="relative min-h-screen flex flex-col justify-center bg-slate-50 overflow-hidden">
@@ -123,8 +125,8 @@ export default function Faq() {
               <AccordionItem
                 key={index}
                 id={index}
-                title={item?.title}
-                content={item?.content}
+                title={t(item?.title)}
+                content={t(item?.content)}
                 isOpen={openIndex === index}
                 onClick={() => toggleAccordion(index)}
                 selected={selected}
