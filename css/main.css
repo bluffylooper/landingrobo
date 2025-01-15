@@ -3894,6 +3894,8 @@ p {
   width: 30%;
   text-align: right;
   padding-right: 15px;
+  display: flex;
+  padding-bottom: 8px;
 }
 
 .rating .star .l .p img {

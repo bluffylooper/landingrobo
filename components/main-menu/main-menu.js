@@ -68,6 +68,7 @@ export default function ManiMenu({ mainMenuLinks }) {
         aria-expanded="false"
         aria-label="Toggle navigation"
         onClick={() => setMenuActive(!isMenuActive)}
+        style={{ border: "none" }}
       >
         <span className="toggler-icon"></span>
         <span className="toggler-icon"></span>

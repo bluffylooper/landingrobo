@@ -115,13 +115,13 @@ export default function LocaleSwitch() {
       className="w-full mx-auto relative"
       onClick={() => setOpenListLocale(!openListLocale)}
     >
-      <button className="w-full hb:w-4/5 flex items-center px-4 py-3 text-gray-900  rounded-sm cursor-pointer focus:outline-none">
+      <button className="md:w-full  flex items-center px-4 py-3 text-gray-900  rounded-sm cursor-pointer focus:outline-none">
         {listLocale.map((item) => {
           if (item.locale === router.locale) {
             return (
               <>
                 {item.icon}
-                <span className="ml-2 font-medium">{item.title}</span>
+                {/* <span className="ml-2 font-medium">{item.title}</span> */}
               </>
             );
           }
@@ -142,7 +142,7 @@ export default function LocaleSwitch() {
         </svg>
       </button>
       <ul
-        className={`w-full absolute left-0 hb:w-4/5 py-1 pb-2 px-4 bg-black text-white font-normal rounded-sm ${
+        className={`w-[150px] absolute left-0  py-1 pb-2 px-4 bg-black text-white font-normal rounded-sm ${
           openListLocale ? "block" : "hidden"
         }`}
       >

@@ -186,7 +186,7 @@ export default function Ios() {
                   <span>
                     <i className="fas fa-portrait"></i>
                   </span>
-                  <span>Infina</span>
+                  <span>{NAME_APP}</span>
                 </div>
               </li>
               <li className="item">
