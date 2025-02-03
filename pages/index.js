@@ -994,7 +994,10 @@ export async function getStaticProps({ locale }) {
     console.log("Could not get posts", e);
 
     return {
-      props: { posts: [], coins: [] },
+      props: {
+        ...(await serverSideTranslations(locale, ["common"])),
+        coins: [],
+      },
     };
   }
 }
